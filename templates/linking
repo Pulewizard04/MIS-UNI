@@ -1,0 +1,149 @@
+<body style="">
+    <section class="body-sign">
+       <div class="center-sign">
+                <a href="/" class="logo pull-left">
+                   <img src="img/logo.png" height="70" alt="Porto Admin">
+               </a>
+
+               <div class="panel panel-sign">
+                   <div class="panel-title-sign mt-xl text-right">
+                       <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> SIGN IN</h2>
+                   </div>
+                   <div class="panel-body">		
+                       <form method="post" name="frmlogin" id="frmlogin">							<div class="form-group mb-lg">
+                               <label>Username</label>
+                               <div class="input-group input-group-icon">
+                                   <input name="Login[username]" required="required" class="form-control input-lg" placeholder="Username" type="text" value="">									<span class="input-group-addon">
+                                       <span class="icon icon-lg">
+                                           <i class="fa fa-user"></i>
+                                       </span>
+                                   </span>
+                               </div>
+                           </div>
+
+                           <div class="form-group mb-lg">
+                               <div class="clearfix">
+                                   <label class="pull-left">Password</label>
+                               </div>
+                               <div class="input-group input-group-icon">
+                               <input type="password" name="Login[password]" required="required" class="form-control input-lg" placeholder="Password" value="">									<span class="input-group-addon">
+                                       <span class="icon icon-lg">
+                                           <i class="fa fa-lock"></i>
+                                       </span>
+                                   </span>
+                               </div>
+                           </div>
+
+                           <div class="row">
+                               <div class="col-sm-4 text-left">
+                                   <button type="submit" class="btn btn-primary hidden-xs">Login</button>
+                                   <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+                               </div>
+                               <div class="col-sm-8">
+                                   <div class="checkbox-custom checkbox-default">
+                                       <a href="/login/resetpassword" class="pull-right">Lost Password?</a>
+                                   </div>
+                               </div>
+                               
+                           </div>
+                       </form>						</div>
+               </div>        
+       </div>
+   </section> 
+   <script>
+   $.backstretch("/img/login-background.jpg", {speed: 600});
+   </script><div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 640px; width: 360px; z-index: -999999; position: fixed;"><img src="/img/login-background.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 960.375px; height: 640px; max-width: none; z-index: -999999; left: -300.188px; top: 0px;"></div>
+
+
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'custom-blue': '#282f49',
+                        'custom-red': '#8a2b31'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="text-black py-4 border border-b-custom-red-2">
+    <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="../assets/images/logo.png" alt="University Logo" class="h-12 w-10">
+            <span class="ml-4 text-2xl font-bold">University Name</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navBar" class="relative flex items-center space-x-6">
+            <!-- Menu for Large Screens -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="#" class="hover:text-custom-red hover:border border-b-custom-red rounded w-20 text-center">Home</a>
+                <a href="#" class="hover:text-custom-red hover:border border-b-custom-red rounded w-20 text-center">About</a>
+                <a href="#" class="hover:text-custom-red hover:border border-b-custom-red rounded w-20 text-center">Contact</a>
+            </div>
+            
+            <!-- Dropdown for Large Screens -->
+            <div class="relative lg:hidden">
+                <button id="dropdownButton" class="flex items-center text-center text-lg font-semibold hover:text-custom-red focus:outline-none">
+                    More
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden lg:hidden">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="navToggle" class="lg:hidden text-2xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+            <span class="bold">Menu</span>
+        </button>
+    </div>
+</header>
+<script src="./assets/js/modules/navbar.js"></script>
+<script>
+    document.getElementById('dropdownButton').addEventListener('click', function() {
+        var menu = document.getElementById('dropdownMenu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Optional: Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        var dropdownButton = document.getElementById('dropdownButton');
+        var dropdownMenu = document.getElementById('dropdownMenu');
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
+    });
+</script>
+</body>
+</html>
